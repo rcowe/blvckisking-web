@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Menu from '@material-ui/core/Menu';
+import './NavBar.css';
 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -40,10 +39,20 @@ function Navbar() {
                         <li>
                             <Link
                                 to='/submit'
-                                className='nav-links-mobile'
+                                className='nav-links'
                                 onClick={closeMobileMenu}
                             >
                                 Submit A Story
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                to='/references'
+                                className='nav-links'
+                                onClick={closeMobileMenu}
+                            >
+                                References
                             </Link>
                         </li>
 
@@ -54,16 +63,6 @@ function Navbar() {
                                 onClick={closeMobileMenu}
                             >
                                 Contact
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                to='/references'
-                                className='nav-links-mobile'
-                                onClick={closeMobileMenu}
-                            >
-                                References
                             </Link>
                         </li>
                     </ul>
