@@ -61,7 +61,7 @@ export default class Contact extends Component {
         };
 
         try {
-            await axios.post("https://simple-backend-nodemailer.herokuapp.com/", data);
+            await axios.post("https://simple-backend-nodemailer.herokuapp.com/api/v1", data);
             this.setState({ sent: true }, this.resetForm());
         } catch (error) {
             console.log(error);
