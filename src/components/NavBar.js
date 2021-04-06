@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+// import Button from '../components/reuse/Button';
 import './NavBar.css';
 
 function Navbar() {
@@ -21,7 +22,9 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
-                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/'
+                                  className='nav-links'
+                                  onClick={closeMobileMenu}>
                                 Home
                             </Link>
                         </li>
@@ -55,17 +58,12 @@ function Navbar() {
                                 Contact
                             </Link>
                         </li>
-
-                        {/*<li>*/}
-                        {/*    <Link*/}
-                        {/*        to='/contact'*/}
-                        {/*        className='nav-links-mobile'*/}
-                        {/*        onClick={closeMobileMenu}*/}
-                        {/*    >*/}
-                        {/*        Contact*/}
-                        {/*    </Link>*/}
-                        {/*</li>*/}
                     </ul>
+                    {/*<Link>*/}
+                    {/*    <Button>*/}
+
+                    {/*    </Button>*/}
+                    {/*</Link>*/}
                 </div>
             </nav>
         </>

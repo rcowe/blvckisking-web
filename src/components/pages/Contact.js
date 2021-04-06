@@ -70,21 +70,6 @@ export default class Contact extends Component {
     render() {
         return (
             <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
-                <TextField
-                    id="standard-multiline-flexible"
-                    label="Message"
-                    placeholder="Enter Message"
-                    variant="outlined"
-                    multiline
-                    rowsMax={4}
-                    value={this.state.message}
-                    onChange={(e) => this.setState({ message: e.target.value })}
-                    required
-                    type="text"
-                />
-                <br />
-                <br />
-                <br />
 
                 <TextField
                     id="outlined-basic"
@@ -126,8 +111,25 @@ export default class Contact extends Component {
                 <br />
                 <br />
                 <br />
+
+                <TextField
+                    id="standard-multiline-flexible"
+                    label="Message"
+                    placeholder="Enter Message"
+                    variant="outlined"
+                    multiline
+                    rowsMax={4}
+                    value={this.state.message}
+                    onChange={(e) => this.setState({ message: e.target.value })}
+                    required
+                    type="text"
+                />
+                <br />
+                <br />
+                <br />
+
                 <div className="button--container">
-                    <button type="submit" className="button button-primary">
+                    <button type="Send Email" className="button button-primary">
                         {this.state.buttonText}
                     </button>
                 </div>
