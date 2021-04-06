@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -15,27 +15,34 @@ const useStyles = makeStyles({
 });
 
 export default function Cards() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch("https://blvckisking-api-app.herokuapp.com/events")
+            .then((res) => res.json())
+            .then((data) => setData(data));
+    }, []);
+
     const classes = useStyles();
 
     return (
         <Card className={classes.root}>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    alt="test-image"
-                    height="140"
-                    image="https://res.cloudinary.com/di5thiyyl/image/upload/v1616865067/blvckisking-images/ancient_egypt_w9rus9.png"
-                    title="Ancient Egypt"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Ancient Egypt
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum loren ipsum
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
+            {data.map((event) => (
+                <CardActionArea key={event.id}>
+                    <CardMedia
+                        component="img"
+                        alt={event.eventname}
+                        height="140"
+                        image={event.image1}
+                        title={event.eventname}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {event.eventname}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            ))}
             <CardActions>
                 <Button size="small" color="primary">
                     Share
