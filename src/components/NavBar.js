@@ -26,16 +26,6 @@ function Navbar() {
                             </Link>
                         </li>
 
-                        <li className='nav-item'>
-                            <Link
-                                to='/openletter'
-                                className='nav-links'
-                                onClick={closeMobileMenu}
-                            >
-                               An Open Letter
-                            </Link>
-                        </li>
-
                         <li>
                             <Link
                                 to='/submit'
