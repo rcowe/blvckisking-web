@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Card from '../reuse/Cards';
+import Carousel from "../Carousel";
 
 const styles = {
     paper: {
@@ -17,13 +18,30 @@ const styles = {
     }
 };
 
+const useStyles = makeStyles(styles);
 
 export default function Home () {
-    const useStyles = makeStyles(styles);
+    const classes = useStyles();
     return (
         <>
         <Grid container spacing={2}>
-
+            <Grid item xs={12}>
+                <Paper className={classes.paper}>
+                    <Carousel />
+                </Paper>
+            </Grid>
+            <Grid item xs={12}>
+                <Paper className={classes.paper}>TBD</Paper>
+            </Grid>
+            <Grid item xs={12}>
+                <Paper className={classes.paper}>TBD</Paper>
+            </Grid>
+            <Grid item xs={12}>
+                <Paper className={classes.paper}>TBD</Paper>
+            </Grid>
+            <Grid item xs={12}>
+                <Paper className={classes.paper}>TBD</Paper>
+            </Grid>
         </Grid>
         </>
     )
