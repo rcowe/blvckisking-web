@@ -2,7 +2,7 @@ import React from 'react';
 import {makeStyles} from "@material-ui/core";
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
-import Card from '../reuse/Cards';
+import CardsEvents from '../reuse/Cards-Events';
 import Carousel from "../Carousel";
 
 const styles = {
@@ -32,7 +32,7 @@ export default function Home () {
             <Grid item xs={12}>
                 <Paper className={classes.paper}>
                     Pre-Slavery 3100 BC - 1600
-                    <Card />
+                    <CardsEvents />
                 </Paper>
             </Grid>
             <Grid item xs={12}>
