@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core";
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import CardsEvents from '../reuse/Cards-Events';
 import Carousel from "../Carousel";
 

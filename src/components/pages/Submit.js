@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
+import Grid from '@material-ui/core/Grid';
+
 
 export default class Submit extends Component {
+
     state = {
         name: "",
         message: "",
@@ -67,73 +70,84 @@ export default class Submit extends Component {
             console.log(error);
         }
     };
+
     render() {
         return (
-            <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
+            <Grid container
+                  spacing={0}
+                  direction="column"
+                  alignItems="center"
+                  justify="center"
+                  style={{ minHeight: '100vh' }}
+            >
+                <Grid item sm={12} background-color="#A0DB9E">
+                        <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
+                            <TextField
+                                id="outlined-basic"
+                                placeholder="Enter your name"
+                                label="Name"
+                                variant="outlined"
+                                value={this.state.name}
+                                onChange={(e) => this.setState({ name: e.target.value })}
+                                required
+                                type="text"
 
-                <TextField
-                    id="outlined-basic"
-                    placeholder="Enter your name"
-                    label="Name"
-                    variant="outlined"
-                    value={this.state.name}
-                    onChange={(e) => this.setState({ name: e.target.value })}
-                    required
-                    type="text"
-                />
-                <br />
-                <br />
-                <br />
+                            />
+                            <br />
+                            <br />
+                            <br />
 
-                <TextField
-                    id="outlined-basic"
-                    label="Email"
-                    placeholder="Enter email address"
-                    variant="outlined"
-                    value={this.state.email}
-                    onChange={(e) => this.handleChangeEmail(e)}
-                    error={this.state.emailError}
-                    required
-                    type="email"
-                />
-                <br />
-                <br />
-                <br />
-                <TextField
-                    id="outlined-basic"
-                    placeholder="Who is this story about"
-                    label="Subject"
-                    variant="outlined"
-                    value={this.state.subject}
-                    onChange={(e) => this.setState({ subject: e.target.value })}
-                    required
-                />
-                <br />
-                <br />
-                <br />
+                            <TextField
+                                id="outlined-basic"
+                                label="Email"
+                                placeholder="Enter email address"
+                                variant="outlined"
+                                value={this.state.email}
+                                onChange={(e) => this.handleChangeEmail(e)}
+                                error={this.state.emailError}
+                                required
+                                type="email"
+                            />
+                            <br />
+                            <br />
+                            <br />
+                            <TextField
+                                id="outlined-basic"
+                                placeholder="Who is this story about"
+                                label="Subject"
+                                variant="outlined"
+                                value={this.state.subject}
+                                onChange={(e) => this.setState({ subject: e.target.value })}
+                                required
+                            />
+                            <br />
+                            <br />
+                            <br />
 
-                <TextField
-                    id="standard-multiline-flexible"
-                    label="Message"
-                    placeholder="Enter Message"
-                    variant="outlined"
-                    multiline
-                    rowsMax={4}
-                    value={this.state.message}
-                    onChange={(e) => this.setState({ message: e.target.value })}
-                    required
-                    type="text"
-                />
-                <br />
-                <br />
-                <br />
+                            <TextField
+                                id="standard-multiline-flexible"
+                                label="Message"
+                                placeholder="Enter Message"
+                                variant="outlined"
+                                multiline
+                                rowsMax={4}
+                                value={this.state.message}
+                                onChange={(e) => this.setState({ message: e.target.value })}
+                                required
+                                type="text"
+                            />
+                            <br />
+                            <br />
+                            <br />
 
-                <div className="button--container">
-                    <button type="Send Story" className="button button-primary">
-                        {this.state.buttonText}
-                    </button>
-                </div>
-            </form>
+                            <div className="button--container">
+                                <button type="Send Story" className="button button-primary">
+                                    {this.state.buttonText}
+                                </button>
+                            </div>
+                        </form>
+                </Grid>
+            </Grid>
         )
     }
 }
