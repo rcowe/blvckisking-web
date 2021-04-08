@@ -2,7 +2,23 @@ import React, { Component } from "react";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Grid from '@material-ui/core/Grid';
+import {makeStyles} from "@material-ui/core";
+import Paper from '@material-ui/core/Paper';
+import Slider from '../Slider';
 
+const styles = {
+    paper: {
+        padding: "2vw",
+        textAlign: "center",
+        color: "#000000",
+        whiteSpace: "nowrap",
+        background: "#A0DB9E",
+        marginTop: "2vh",
+        marginBottom: "2vh"
+    }
+};
+
+const useStyles = makeStyles(styles);
 
 export default class Submit extends Component {
 
@@ -74,12 +90,17 @@ export default class Submit extends Component {
     render() {
         return (
             <Grid container
-                  spacing={0}
+                  spacing={6}
                   direction="column"
                   alignItems="center"
                   justify="center"
                   style={{ minHeight: '100vh' }}
             >
+                <Grid item xl={12}>
+                    <Paper className={useStyles.paper}>
+                        <Slider />
+                    </Paper>
+                </Grid>
                 <Grid item sm={12} background-color="#A0DB9E">
                         <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
                             <TextField
