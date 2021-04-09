@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
+import Grid from "@material-ui/core/Grid";
 
 const randomtest = [
     { title: 'The Shawshank Redemption', year: 1994 },
@@ -31,12 +31,23 @@ const randomtest = [
 
 export default function References() {
     return (
-        <Autocomplete
-            id="combo-box-demo"
-            options={randomtest}
-            getOptionLabel={(option) => option.title}
-            style={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
-        />
+        <Grid container
+              spacing={6}
+              direction="column"
+              alignItems="center"
+              justify="center"
+              style={{ minHeight: '100vh' }}
+        >
+            <Grid item>
+                <Autocomplete
+                    id="combo-box-demo"
+                    options={randomtest}
+                    getOptionLabel={(option) => option.title}
+                    style={{ width: 300 }}
+                    renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                />
+            </Grid>
+        </Grid>
+
     );
 }

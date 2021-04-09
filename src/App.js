@@ -1,10 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/NavBar';
-import Home from './components/pages/Home'
-import OpenLetter from './components/pages/OpenLetter'
-import Submit from './components/pages/Submit'
-import Contact from './components/pages/Contact'
-import References from './components/pages/References'
+import Home from './components/pages/Home';
+import OpenLetter from './components/pages/OpenLetter';
+import Submit from './components/pages/Submit';
+import Contact from './components/pages/Contact';
+import References from './components/pages/References';
+import EventShow from './components/pages/EventsShow';
+import PeopleShow from './components/pages/PeopleShow';
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
                     <Route path='/submit' component={Submit} />
                     <Route path='/contact' component={Contact} />
                     <Route path='/references' component={References} />
+                    <Route path='/events' component={EventShow} />
+                    <Route path='/people' component={PeopleShow} />
                 </Switch>
             </Router>
         </>
