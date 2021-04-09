@@ -2,23 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
 import Grid from '@material-ui/core/Grid';
-import {makeStyles} from "@material-ui/core";
-import Paper from '@material-ui/core/Paper';
-import Slider from '../Slider';
+import Carousel from '../Carousel-Submit';
 
-const styles = {
-    paper: {
-        padding: "2vw",
-        textAlign: "center",
-        color: "#000000",
-        whiteSpace: "nowrap",
-        background: "#A0DB9E",
-        marginTop: "2vh",
-        marginBottom: "2vh"
-    }
-};
-
-const useStyles = makeStyles(styles);
 
 export default class Submit extends Component {
 
@@ -90,19 +75,18 @@ export default class Submit extends Component {
     render() {
         return (
             <Grid container
-                  spacing={6}
+                  spacing={2}
                   direction="column"
                   alignItems="center"
                   justify="center"
                   style={{ minHeight: '100vh' }}
             >
-                <Grid item xl={12}>
-                    <Paper className={useStyles.paper}>
-                        <Slider />
-                    </Paper>
+                <Grid item xs={12} align="center">
+                        <Carousel />
                 </Grid>
-                <Grid item sm={12} background-color="#A0DB9E">
-                        <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
+                <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
+
+                        <Grid item>
                             <TextField
                                 id="outlined-basic"
                                 placeholder="Enter your name"
@@ -112,12 +96,16 @@ export default class Submit extends Component {
                                 onChange={(e) => this.setState({ name: e.target.value })}
                                 required
                                 type="text"
-
+                                margin="normal"
+                                fullWidth
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                                style={{ margin: 50 }}
                             />
-                            <br />
-                            <br />
-                            <br />
+                        </Grid>
 
+                        <Grid item>
                             <TextField
                                 id="outlined-basic"
                                 label="Email"
@@ -128,10 +116,15 @@ export default class Submit extends Component {
                                 error={this.state.emailError}
                                 required
                                 type="email"
+                                fullWidth
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                                style={{ margin: 45 }}
                             />
-                            <br />
-                            <br />
-                            <br />
+                        </Grid>
+
+                        <Grid item>
                             <TextField
                                 id="outlined-basic"
                                 placeholder="Who is this story about"
@@ -140,35 +133,45 @@ export default class Submit extends Component {
                                 value={this.state.subject}
                                 onChange={(e) => this.setState({ subject: e.target.value })}
                                 required
+                                type="text"
+                                fullWidth
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                                style={{ margin: 50 }}
                             />
-                            <br />
-                            <br />
-                            <br />
+                        </Grid>
 
+                        <Grid item>
                             <TextField
                                 id="standard-multiline-flexible"
                                 label="Message"
                                 placeholder="Enter Message"
                                 variant="outlined"
                                 multiline
-                                rowsMax={4}
                                 value={this.state.message}
                                 onChange={(e) => this.setState({ message: e.target.value })}
                                 required
                                 type="text"
+                                fullWidth
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                                style={{ margin: 50 }}
                             />
-                            <br />
-                            <br />
-                            <br />
+                        </Grid>
 
+                        <Grid item xs={12} sm={12} md={8} align="center">
                             <div className="button--container">
                                 <button type="Send Story" className="button button-primary">
                                     {this.state.buttonText}
                                 </button>
                             </div>
-                        </form>
-                </Grid>
+                        </Grid>
+
+                </form>
             </Grid>
+
         )
     }
 }

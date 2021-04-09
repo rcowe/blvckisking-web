@@ -3,7 +3,9 @@ import {makeStyles} from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import CardsEvents from '../reuse/Cards-Events';
-import Carousel from "../Carousel";
+import Carousel from "../Carousel-Home";
+import Typography from '@material-ui/core/Typography';
+
 
 const styles = {
     paper: {
@@ -31,7 +33,9 @@ export default function Home () {
             </Grid>
             <Grid item xs={12}>
                 <Paper className={classes.paper}>
-                    Pre-Slavery 3100 BC - 1600
+                    <Typography>
+                        Pre-Slavery 3100 BC - 1600
+                    </Typography>
                     <CardsEvents />
                 </Paper>
             </Grid>
