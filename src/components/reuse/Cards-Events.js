@@ -11,8 +11,13 @@ import Grid from "@material-ui/core/Grid";
 import history from '../reuse/history';
 
 const useStyles = makeStyles({
-    root: {
+    card: {
         maxWidth: 345,
+        boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3)",
+        backgroundColor: "#fafafa",
+    },
+    media: {
+        height: 300,
     },
 });
 
@@ -32,7 +37,7 @@ export default function CardsEvents(props) {
             <Grid container spacing={3}>
                 {data.map((event) => (
                     <Grid key={event.id} item xs={12} sm={4}>
-                        <Card className={classes.root} onClick={() => history.push(`/events/${event.id}`)}>
+                        <Card className={classes.card} onClick={() => history.push(`/events/${event.id}`)}>
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
@@ -40,7 +45,7 @@ export default function CardsEvents(props) {
                                     height="140"
                                     image={event.image1}
                                     title={event.eventname}
-
+                                    className={classes.media}
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
@@ -50,10 +55,12 @@ export default function CardsEvents(props) {
                             </CardActionArea>
                             <CardActions>
                                 <Button size="small" color="primary" endpoint={`/events/${event.id}`}>
-                                    <a href={`/events/${event.id}`}>Share</a>
+                                    <a href={`/events/${event.id}`}>Learn More</a>
                                 </Button>
                                 <Button size="small" color="primary">
-                                    Learn More
+                                    <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.blvkisking.com."
+                                       title="Share by Email"> Share
+                                    </a>
                                 </Button>
                             </CardActions>
                         </Card>

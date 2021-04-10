@@ -12,11 +12,11 @@ function Example(props)
         },
         {
             title: "Why BLVCKISKING?",
-            description: "Inspired by Queen B's 'Black Is King' film, a labor of love, a visual companion of the 2019 Lion King Movie. This site is meant to be a visual exercise that Black people existed long before slavery, persevered throughout and are stepping into greatness in our present. Your existence is radical."
+            description: "Inspired by Queen B's 'Black Is King' film, a labor of love, a visual companion of the 2019 Lion King Movie." +
+                "This site is meant to be a visual exercise that Black people existed long before slavery, persevered throughout and are stepping into greatness in our present. " +
+                "Your existence is radical."
         },
     ]
-
-
     return (
         <Carousel>
             {
@@ -36,12 +36,14 @@ function Item(props)
                 gutterBottom
                 variant="h2"
                 align="center"
-                noWrap={true}
             >
                 {props.item.title}
             </Typography>
-
-            <p>{props.item.description}</p>
+            <Typography
+                noWrap={true}
+            >
+                {props.item.description}
+            </Typography>
 
             <Button className="CheckButton">
                 Step into History

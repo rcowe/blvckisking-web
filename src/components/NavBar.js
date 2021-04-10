@@ -2,8 +2,22 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import Button from '../components/reuse/Button';
 import './NavBar.css';
+import { makeStyles } from "@material-ui/core";
+
+const styles = {
+    logo: {
+        height: 70,
+        width: 70
+    },
+    navbar_background: {
+        background: "linear-gradient(45deg, #613395 30%, #713395 90%)"
+    }
+}
+
+const useStyles = makeStyles(styles);
 
 function Navbar() {
+    const classes = useStyles();
     const [click, setClick] = useState(false);
 
     const handleClick = () => setClick(!click);
@@ -12,9 +26,10 @@ function Navbar() {
 
     return (
         <>
-            <nav className='navbar'>
+            <nav className='navbar' className={classes.navbar_background}>
                 <div className='navbar-container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                        <img alt="logo" className={classes.logo} src="//res.cloudinary.com/di5thiyyl/image/upload/v1618047220/blvckisking-images/logo_unzh2c.png" />
                         BLVCKISKING
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
@@ -55,7 +70,7 @@ function Navbar() {
                                 className='nav-links'
                                 onClick={closeMobileMenu}
                             >
-                                Contact
+                                About & Contact
                             </Link>
                         </li>
                     </ul>
