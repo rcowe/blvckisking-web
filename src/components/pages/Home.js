@@ -7,6 +7,7 @@ import CardsPeople from '../reuse/Cards-People';
 import Carousel from "../Carousel-Home";
 import Typography from '@material-ui/core/Typography';
 import PeopleShow from "./PeopleShow";
+
 const styles = {
     paper: {
         padding: "2vw",

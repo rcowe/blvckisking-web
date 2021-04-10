@@ -20,9 +20,6 @@ export default class PeopleShow extends Component {
                    <h1>
                        {this.props.firstname}
                    </h1>
-                    <h2>
-                        TEXT
-                    </h2>
                 </Grid>
             </Grid>
         );

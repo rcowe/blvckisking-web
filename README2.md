@@ -1,6 +1,4 @@
-# Project Name
-
-## BLVCKISKING
+# BLVCKISKING
 
 # Description
 
@@ -15,7 +13,8 @@ Some of the inspiration for this project is:
 
 # Technologies Used
 
-- React 
+- React
+- Ruby on Rails Backend
 - Material ui
 - Nodemailer 
 - React Router
@@ -28,8 +27,14 @@ Some of the inspiration for this project is:
 
 # Next Version Features
 
-- Working show page 
+- Working show page or Modal
 - More data 
 - Breakdown by time period in history
 - Guess Who Game 
 - Working "About Me" section
+- References Search Bar
+
+# Additional Repos
+
+- https://github.com/rcowe/blvckisking-api-rails
+- https://github.com/rcowe/simple-backend-blvckisking [ private ]
