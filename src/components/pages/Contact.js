@@ -15,20 +15,6 @@ export default class Contact extends Component {
         emailError: false,
     };
 
-    resetForm = () => {
-        this.setState({
-            name: "",
-            message: "",
-            email: "",
-            subject: "",
-            buttonText: "Message Sent",
-        });
-
-        setTimeout(() => {
-            this.setState({ sent: false });
-        }, 3000);
-    };
-
     handleChangeEmail(e) {
         if (
             !e.target.value.match(
@@ -48,6 +34,21 @@ export default class Contact extends Component {
             this.setState({ email: e.target.value, emailError: false });
         }
     }
+
+    resetForm = () => {
+        this.setState({
+            name: "",
+            message: "",
+            email: "",
+            subject: "",
+            buttonText: "Message Sent",
+        });
+
+        setTimeout(() => {
+            this.setState({ sent: false });
+        }, 3000);
+    };
+
 
     formSubmit = async (e) => {
         e.preventDefault();

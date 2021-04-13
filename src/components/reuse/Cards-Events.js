@@ -58,7 +58,7 @@ export default function CardsEvents(props) {
                                     <a href={`/events/${event.id}`}>Learn More</a>
                                 </Button>
                                 <Button size="small" color="primary">
-                                    <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.blvkisking.com."
+                                    <a href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site http://www.blvckisking.com."
                                        title="Share by Email"> Share
                                     </a>
                                 </Button>
